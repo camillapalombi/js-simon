@@ -49,7 +49,13 @@ function enterNumbers() {
     guessNumbers = compareArray(arrRandomNum, arrRememberNum);
     console.log(guessNumbers);
 
-    printFinalResult.innerHTML = `Hai indovinato: ${finalArray.length} numeri su 5, i numeri che hai indovinato sono: ${finalArray}`
+    if (finalArray.length == 5) {
+        printFinalResult.innerHTML = 'Hai indovinato tutti i numeri';
+    } else if (finalArray.length == 0) {
+        printFinalResult.innerHTML = 'Non hai indovinato nessun numero';
+    } else {
+        printFinalResult.innerHTML = `Hai indovinato: ${finalArray.length} numeri su 5, i numeri che hai indovinato sono: ${finalArray}`;
+    }
 }
 
 
