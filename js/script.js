@@ -24,4 +24,14 @@ for (let i = 0; i < 5; i++) {
     printRandomNumbers.innerHTML = arrRandomNum;
 }
 
+//setTimeout
+
+setTimeout(numbersDisapper, 30000);
+
+function numbersDisapper() {
+    
+    printRandomNumbers.innerHTML = ''; //faccio sparire i 5 numeri dall'html
+
+}
+
 
