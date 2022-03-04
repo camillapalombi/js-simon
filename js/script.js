@@ -17,10 +17,11 @@ let arrRandomNum = [];
 
 //stampa dei 5 numeri casuali
 for (let i = 0; i < 5; i++) {
+    do {
     randomNumbers = Math.floor(Math.random() * (20 - 1 + 1) + 1);
-    console.log(randomNumbers);
+    } while (arrRandomNum.includes(randomNumbers)); //eliminare i duplicati
     arrRandomNum.push(randomNumbers);
-    console.log(arrRandomNum);
+    console.log(randomNumbers);
     printRandomNumbers.innerHTML = arrRandomNum;
 }
 
@@ -36,16 +37,31 @@ function numbersDisapper() {
 
 //setTimeout per visualizzare i 5 prompt
 let arrRememberNum = [];
+let rememberNumbers;
 
 setTimeout(enterNumbers, 4000);
 
 function enterNumbers() {
     for (let i = 0; i < 5; i++) {
-        let rememberNumbers = parseInt(prompt('Scrivi numero che ricordi'));
+        rememberNumbers = parseInt(prompt('Scrivi numero che ricordi'));
         arrRememberNum.push(rememberNumbers);
-        console.log(arrRememberNum);
     }
+    let found = false;
+    for (let i = 0; i < arrRandomNum.length; i++) {
+        if (arrRandomNum[i] == arrRememberNum[i]) {
+            found = true;
+            printFinalResult.innerHTML = 'Hai indovinato tutti i numeri, eccoli qui:' + arrRandomNum;
+        } else {
+            found = false;
+            printFinalResult.innerHTML = 'Hai indovinato solo questi numeri:' + arrRememberNum[i] == arrRandomNum[i];
+        }
 }
+
+    
+}
+
+
+
 
 
 
