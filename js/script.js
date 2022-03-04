@@ -46,7 +46,41 @@ function enterNumbers() {
         rememberNumbers = parseInt(prompt('Scrivi numero che ricordi'));
         arrRememberNum.push(rememberNumbers);
     }
-    let found = false;
+    guessNumbers = compareArray(arrRandomNum, arrRememberNum);
+    console.log(guessNumbers);
+
+    printFinalResult.innerHTML = `Hai indovinato: ${finalArray.length} numeri su 5, i numeri che hai indovinato sono: ${finalArray}`
+}
+
+
+// funzione per comparare i due Array!
+let guessNumbers = compareArray(arrRandomNum, arrRememberNum);
+const finalArray = [];
+    function compareArray(arrRandomNum, arrRememberNum) {
+        
+        arrRandomNum.forEach((element1) => arrRememberNum.forEach((elemento2)=>
+        {if (element1 === elemento2) {
+            finalArray.push(element1);
+            console.log(finalArray)
+        }}));
+        
+    }
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+/*
+
+let found = false;
     for (let i = 0; i < arrRandomNum.length; i++) {
         if (arrRandomNum[i] == arrRememberNum[i]) {
             found = true;
@@ -54,15 +88,4 @@ function enterNumbers() {
         } else {
             found = false;
             printFinalResult.innerHTML = 'Hai indovinato solo questi numeri:' + arrRememberNum[i] == arrRandomNum[i];
-        }
-}
-
-    
-}
-
-
-
-
-
-
-
+        }*/
