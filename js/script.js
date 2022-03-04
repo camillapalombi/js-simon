@@ -10,3 +10,18 @@
 let printRandomNumbers = document.querySelector('.random-numbers'); //stampa dei Nrandom
 
 let printFinalResult = document.querySelector('.result');//stampa del risultato finale
+
+let randomNumbers;
+
+let arrRandomNum = [];
+
+//stampa dei 5 numeri casuali
+for (let i = 0; i < 5; i++) {
+    randomNumbers = Math.floor(Math.random() * (20 - 1 + 1) + 1);
+    console.log(randomNumbers);
+    arrRandomNum.push(randomNumbers);
+    console.log(arrRandomNum);
+    printRandomNumbers.innerHTML = arrRandomNum;
+}
+
+
