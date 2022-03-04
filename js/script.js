@@ -24,14 +24,29 @@ for (let i = 0; i < 5; i++) {
     printRandomNumbers.innerHTML = arrRandomNum;
 }
 
-//setTimeout
+//setTimeout x eliminare i 5 numeri dall'html
 
-setTimeout(numbersDisapper, 30000);
+setTimeout(numbersDisapper, 3000);
 
 function numbersDisapper() {
     
-    printRandomNumbers.innerHTML = ''; //faccio sparire i 5 numeri dall'html
+    printRandomNumbers.innerHTML = '';
 
 }
+
+//setTimeout per visualizzare i 5 prompt
+let arrRememberNum = [];
+
+setTimeout(enterNumbers, 4000);
+
+function enterNumbers() {
+    for (let i = 0; i < 5; i++) {
+        let rememberNumbers = parseInt(prompt('Scrivi numero che ricordi'));
+        arrRememberNum.push(rememberNumbers);
+        console.log(arrRememberNum);
+    }
+}
+
+
 
 
