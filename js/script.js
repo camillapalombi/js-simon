@@ -27,7 +27,7 @@ for (let i = 0; i < 5; i++) {
 
 //setTimeout x eliminare i 5 numeri dall'html
 
-setTimeout(numbersDisapper, 3000);
+setTimeout(numbersDisapper, 30000);
 
 function numbersDisapper() {
     
@@ -39,7 +39,7 @@ function numbersDisapper() {
 let arrRememberNum = [];
 let rememberNumbers;
 
-setTimeout(enterNumbers, 4000);
+setTimeout(enterNumbers, 31000);
 
 function enterNumbers() {
     for (let i = 0; i < 5; i++) {
@@ -50,9 +50,9 @@ function enterNumbers() {
     console.log(guessNumbers);
 
     if (finalArray.length == 5) {
-        printFinalResult.innerHTML = 'Hai indovinato tutti i numeri';
+        printFinalResult.innerHTML = 'Hai indovinato tutti e 5 i numeri, eccoli qui:' + finalArray;
     } else if (finalArray.length == 0) {
-        printFinalResult.innerHTML = 'Non hai indovinato nessun numero';
+        printFinalResult.innerHTML = 'Non hai indovinato alcun numero, riprova!';
     } else {
         printFinalResult.innerHTML = `Hai indovinato: ${finalArray.length} numeri su 5, i numeri che hai indovinato sono: ${finalArray}`;
     }
@@ -69,29 +69,5 @@ const finalArray = [];
             finalArray.push(element1);
             console.log(finalArray)
         }}));
-        
     }
     
-
-
-
-
-
-    
-
-
-
-
-
-
-/*
-
-let found = false;
-    for (let i = 0; i < arrRandomNum.length; i++) {
-        if (arrRandomNum[i] == arrRememberNum[i]) {
-            found = true;
-            printFinalResult.innerHTML = 'Hai indovinato tutti i numeri, eccoli qui:' + arrRandomNum;
-        } else {
-            found = false;
-            printFinalResult.innerHTML = 'Hai indovinato solo questi numeri:' + arrRememberNum[i] == arrRandomNum[i];
-        }*/
